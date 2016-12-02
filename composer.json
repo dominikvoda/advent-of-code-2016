@@ -1,0 +1,20 @@
+{
+  "name": "wassy123/advent-of-code-2016",
+  "description": "Advent of Code 2016 puzzles",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Dominik Voda",
+      "email": "d.voda94@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "3.2.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "AdventOfCode2016\\": "src/"
+    }
+  }
+}
