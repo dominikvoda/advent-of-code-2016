@@ -10,7 +10,7 @@
  * Time: 13:56
  */
 
-namespace AdventOfCode2016\Days\Day6;
+namespace AdventOfCode2016\Days\Day3;
 
 use AdventOfCode2016\Days\AbstractPuzzle;
 
@@ -18,5 +18,10 @@ class Puzzle extends AbstractPuzzle
 {
     public function resolve(){
         return "not implemented yet";
+    }
+
+    public function getInputType()
+    {
+        return self::LINES_INPUT;
     }
 }

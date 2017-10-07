@@ -30,6 +30,11 @@ class Puzzle extends AbstractPuzzle
         3 => self::DIRECTION_RIGHT,
     ];
 
+    public function getInputType()
+    {
+        return self::LINES_INPUT;
+    }
+
     protected $input;
 
     protected $currentLocation = [0, 0];

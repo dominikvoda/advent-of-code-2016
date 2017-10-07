@@ -12,11 +12,44 @@
 
 namespace AdventOfCode2016\Days;
 
+use AdventOfCode2016\Input;
+
 /**
  * Class AbstractPuzzle
+ *
  * @package AdventOfCode2016\Days
  */
 abstract class AbstractPuzzle
 {
-    abstract public function resolve();
+    protected $input;
+
+    const LINES_INPUT = 'lines';
+    const VARIABLE_INPUT = 'variable';
+    const NO_INPUT = 'nothing';
+    const INPUT_TYPE = 'you should implement it in puzzle class';
+
+    public function loadInput($mode = self::LINES_INPUT, $file)
+    {
+        if ($mode === self::NO_INPUT) {
+            return;
+        }
+        if ($mode === self::LINES_INPUT) {
+            $this->input = Input::loadLinesIntoArray($file);
+        }
+        if ($mode === self::VARIABLE_INPUT) {
+            $this->input = Input::loadIntoVariable($file);
+        }
+    }
+
+    abstract public function getInputType();
+
+    public function resolve()
+    {
+        return 'not implemented';
+    }
+
+    public function resolveSecond()
+    {
+        return 'not implemented';
+    }
 }

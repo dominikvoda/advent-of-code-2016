@@ -30,7 +30,7 @@ class Input
      * @param string $file
      * @return array
      */
-    public static function loadIntoLinesArray($file){
+    public static function loadLinesIntoArray($file){
         $array = [];
         $handle = fopen($file, "r");
         if ($handle) {

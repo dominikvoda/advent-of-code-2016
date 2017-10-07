@@ -12,7 +12,6 @@
 
 namespace AdventOfCode2016;
 
-
 use AdventOfCode2016\Days\AbstractPuzzle;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -29,12 +28,18 @@ class Puzzle extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $day = $input->getArgument("day");
-        $puzzleClass = "AdventOfCode2016\\Days\\Day" . $day . "\\Puzzle";
+
+        $puzzleClass = "\\AdventOfCode2016\\Days\\Day" . $day . "\\Puzzle";
+
+        $folder = __DIR__ . "/days/day" . $day;
 
         /** @var AbstractPuzzle $puzzle */
         $puzzle = new $puzzleClass();
 
-        $output->writeln("Result: " . $puzzle->resolve());
+        $puzzle->loadInput($puzzle->getInputType(), $folder . '/input.txt');
+
+        $output->writeln("Result first part: " . $puzzle->resolve());
+        $output->writeln("Result second part: " . $puzzle->resolveSecond());
     }
 
 }

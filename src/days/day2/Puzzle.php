@@ -57,11 +57,16 @@ class Puzzle extends AbstractPuzzle
         "2-4" => "1",
     ];
 
+    public function getInputType()
+    {
+        return self::LINES_INPUT;
+    }
+
     public function __construct()
     {
         $this->currentPosition = [1, 1];
         $this->code = [];
-        $this->lines = Input::loadIntoLinesArray(self::INPUT_FILE);
+        $this->lines = Input::loadLinesIntoArray(self::INPUT_FILE);
     }
 
     public function resolve()
